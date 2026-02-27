@@ -33,3 +33,28 @@ const nums2 = [...nums1];
 nums2.push(100);
 console.log(nums1);
 console.log(nums2);
+
+// Destructuring
+const values = [2, 5, 9];
+const [a, , b] = values;
+console.log(a);
+console.log(b);
+
+const card = {
+  name: "Shoes",
+  price: 13000,
+  size: {
+    large: 43,
+    medium: 36,
+    small: 32,
+  },
+};
+
+const {
+  name: cardName,
+  price,
+  size: { large },
+} = card;
+console.log(cardName);
+console.log(price);
+console.log(large);
