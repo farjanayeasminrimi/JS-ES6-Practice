@@ -58,3 +58,21 @@ const {
 console.log(cardName);
 console.log(price);
 console.log(large);
+
+// keys, values, entries, delete, seal, freeze
+const person = {
+  name: "Rimi",
+  age: 20,
+  height: "4'9",
+  skin: "Dark",
+};
+Object.seal(person);
+Object.freeze(person);
+person.hobby = "Watching movies";
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person));
+
+person.skin = "fair";
+delete person.skin;
+console.log(person);
