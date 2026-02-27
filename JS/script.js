@@ -27,3 +27,9 @@ console.log(numbersMax);
 console.log(Math.max(...numbers));
 
 // copy
+const nums1 = [1, 2, 3, 4, 9];
+const nums2 = [...nums1];
+
+nums2.push(100);
+console.log(nums1);
+console.log(nums2);
