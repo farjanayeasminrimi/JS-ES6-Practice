@@ -76,3 +76,42 @@ console.log(Object.entries(person));
 person.skin = "fair";
 delete person.skin;
 console.log(person);
+
+// rest operator (To hide password in UI, we use rest operator)
+const { skin, ...rest } = person;
+console.log(rest);
+
+const evenNum = (first, ...restEven) => {
+  console.log(first); // first card would be in featured list
+  console.log(restEven);
+};
+evenNum(2, 24, 4, 6, 6, 88);
+
+const evenNum2 = (...restEven) => {
+  console.log(restEven);
+};
+evenNum2(2, 24, 4, 6, 6, 88);
+
+// forEach , find , filter, map, reduce
+const namesArr = ["Rimi", "Yeasmin", "Farjana"];
+
+namesArr.forEach((element) => {
+  console.log(element);
+});
+
+const numberArr = [2, 4, 6, 7];
+numberArr.forEach((element) => {
+  console.log(element * element);
+});
+
+// map
+const prices = [22, 44, 66];
+const vatPlus = prices.map((p) => p + p * 0.15);
+console.log(vatPlus);
+
+const findValue = prices.find((n) => n >= 22);
+const filterValue = prices.filter((n) => n >= 22);
+console.log(findValue);
+console.log(filterValue);
+
+// const filtering = prices;
