@@ -163,3 +163,14 @@ let fruits = ["Apple", "Orange"];
 // console.log(fruits);
 // arrNum(fruits);
 // console.log(fruits);
+
+// Increment
+
+let firstN = 2;
+let lastN = firstN++;
+
+let altFirst = 5;
+let altSec = ++altFirst;
+
+// console.log(firstN, lastN);
+// console.log(altFirst, altSec);
