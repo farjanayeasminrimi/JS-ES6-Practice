@@ -142,3 +142,24 @@ function outerFun() {
 // outPut();
 // outPut();
 // outPut();
+
+// pass by value and pass by reference
+
+const doMultiply = (a, b) => {
+  const result = a * b;
+  return result;
+};
+const x = 8;
+const y = 2;
+// console.log(doMultiply(2, 4));
+// console.log(doMultiply(x, y));
+// console.log(x, y);
+
+const arrNum = (arr) => {
+  arr.push("Mango");
+};
+
+let fruits = ["Apple", "Orange"];
+// console.log(fruits);
+// arrNum(fruits);
+// console.log(fruits);
