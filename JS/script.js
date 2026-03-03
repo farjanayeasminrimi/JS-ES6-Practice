@@ -2,20 +2,20 @@ function add(num1, num2 = 0) {
   const adding = num1 + num2;
   return adding;
 }
-console.log(add(4));
+// console.log(add(4));
 
 // Arrow function
 
 const subtr = (num1, num2) => {
   return num1 - num2;
 };
-console.log(subtr(100, 30));
+// console.log(subtr(100, 30));
 
 const multiply = (x) => x * x;
-console.log(multiply(4));
+// console.log(multiply(4));
 
 const stringAdd = () => "hello" + " world";
-console.log(stringAdd());
+// console.log(stringAdd());
 
 // spread, array max, copy array
 
@@ -23,22 +23,22 @@ console.log(stringAdd());
 const numbersMax = Math.max(3, 5, 6, 6, 3, 8, 12);
 const numbers = [3, 5, 6, 6, 3, 8, 12];
 
-console.log(numbersMax);
-console.log(Math.max(...numbers));
+// console.log(numbersMax);
+// console.log(Math.max(...numbers));
 
 // copy
 const nums1 = [1, 2, 3, 4, 9];
 const nums2 = [...nums1];
 
 nums2.push(100);
-console.log(nums1);
-console.log(nums2);
+// console.log(nums1);
+// console.log(nums2);
 
 // Destructuring
 const values = [2, 5, 9];
 const [a, , b] = values;
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
 
 const card = {
   name: "Shoes",
@@ -55,9 +55,10 @@ const {
   price,
   size: { large },
 } = card;
-console.log(cardName);
-console.log(price);
-console.log(large);
+// console.log(cardName);
+// console.log(price);
+// console.log(large);
+// console.log(card.size?.large);
 
 // keys, values, entries, delete, seal, freeze
 const person = {
@@ -69,26 +70,26 @@ const person = {
 Object.seal(person);
 Object.freeze(person);
 person.hobby = "Watching movies";
-console.log(Object.keys(person));
-console.log(Object.values(person));
-console.log(Object.entries(person));
+// console.log(Object.keys(person));
+// console.log(Object.values(person));
+// console.log(Object.entries(person));
 
 person.skin = "fair";
 delete person.skin;
-console.log(person);
+// console.log(person);
 
 // rest operator (To hide password in UI, we use rest operator)
 const { skin, ...rest } = person;
-console.log(rest);
+// console.log(rest);
 
 const evenNum = (first, ...restEven) => {
-  console.log(first); // first card would be in featured list
-  console.log(restEven);
+  // console.log(first); // first card would be in featured list
+  // console.log(restEven);
 };
 evenNum(2, 24, 4, 6, 6, 88);
 
 const evenNum2 = (...restEven) => {
-  console.log(restEven);
+  // console.log(restEven);
 };
 evenNum2(2, 24, 4, 6, 6, 88);
 
@@ -96,22 +97,48 @@ evenNum2(2, 24, 4, 6, 6, 88);
 const namesArr = ["Rimi", "Yeasmin", "Farjana"];
 
 namesArr.forEach((element) => {
-  console.log(element);
+  // console.log(element);
 });
 
 const numberArr = [2, 4, 6, 7];
 numberArr.forEach((element) => {
-  console.log(element * element);
+  // console.log(element * element);
 });
 
 // map
 const prices = [22, 44, 66];
 const vatPlus = prices.map((p) => p + p * 0.15);
-console.log(vatPlus);
+// console.log(vatPlus);
 
-const findValue = prices.find((n) => n >= 22);
-const filterValue = prices.filter((n) => n >= 22);
-console.log(findValue);
-console.log(filterValue);
+const findValue = prices.find((n) => n >= 22); //only gives the first value which match the condition
+const filterValue = prices.filter((n) => n >= 22); //return the array of matching element of the condition
+// console.log(findValue);
+// console.log(filterValue);
 
-// const filtering = prices;
+// reduce method
+
+const costs = [12, 44, 52, 65, 23, 56];
+let totalCost = 0;
+const sum = costs.reduce((acc, num) => {
+  return acc + num;
+}, 0);
+
+// console.log(sum);
+
+// Closure
+
+function outerFun() {
+  let defaultSum = 0;
+
+  function innerFun() {
+    defaultSum++;
+    console.log(defaultSum);
+  }
+  // return innerFun;
+  return innerFun;
+}
+//
+// const outPut = outerFun();
+// outPut();
+// outPut();
+// outPut();
